@@ -2,11 +2,11 @@ Deze game is gebaseerd op het template voor 4HV van het Emmauscollege Rotterdam
 
 ## Mijn spel: *naam van het spel*
 Gemaakt door:
-- *naam van leerling 1*
-- *naam van leerling 2*
+- *Lars van den Bos*
+- *Jarno van Daalen*
 
 ### Beschrijving
-*korte beschrijving van het spel, wat je kunt doen in het spel, wat het doel is*
+*2D parkour game. je kunt lopen, springen en je moet iets pakken voor je naar de finish kan. het doel is om uit een grot te komen en niet dood te gaan. *
 
 ## Mijn planning
 Werk de planning af van boven naar beneden<br>
