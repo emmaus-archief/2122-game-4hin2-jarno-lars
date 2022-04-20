@@ -26,7 +26,9 @@ var spelerY = 600; // y-positie van speler
  */
 var beweegAlles = function () {
   // speler
-
+  if (keyIsDown(37)) {
+spelerX = spelerX -1
+  }
   // vijand
 
   // kogel
@@ -39,7 +41,12 @@ var beweegAlles = function () {
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-
+if (spelerX - vijandX <50 &&
+    spelerX - vijandX <-50 &&
+   spelerY === vijandY <50 &&
+   spelerY - vijandY >-50)
+  console.log ("botsing");
+  spelstatus = GAMEOVER
   // botsing kogel tegen vijand
 
   // update punten en health
@@ -51,16 +58,15 @@ var verwerkBotsing = function () {
  */
 var tekenAlles = function () {
   // achtergrond
-
+fill("blue");
+rect(0,0,1280,720);
   // vijand
 
   // kogel
 
   // speler
-  fill("white");
-  rect(spelerX - 25, spelerY - 25, 50, 50);
-  fill("0,0,0,0");
-  ellipse(spelerX, spelerY, 100, 100);
+  fill("green");
+  ellipse(spelerX, spelerY, 50, 50);
 
   // punten en health
 
