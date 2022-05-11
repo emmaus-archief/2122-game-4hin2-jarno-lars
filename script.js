@@ -1,4 +1,5 @@
 /* Game opdracht
+yoyoyo
    Informatica - Emmauscollege Rotterdam
    Template voor een game in JavaScript met de p5 library
 
