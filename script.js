@@ -58,7 +58,6 @@ spelerY = spelerY -1
  * Updatet globale variabelen punten en health
  */
 var verwerkBotsing = function () {
-  console.log ("verwerk botsing");
   // botsing speler tegen vijand
 if (spelerX - vijandX <50 &&
     spelerX - vijandX > -50 &&
