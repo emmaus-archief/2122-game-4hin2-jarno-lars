@@ -22,8 +22,8 @@ const KEY_DOWN = 40
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
-var vijandX = 600;
-var vijandY = 600;
+var vijandX = 610;
+var vijandY = 640;
 
 
 /* ********************************************* */
@@ -58,13 +58,15 @@ spelerY = spelerY -1
  * Updatet globale variabelen punten en health
  */
 var verwerkBotsing = function () {
+  console.log ("verwerk botsing");
   // botsing speler tegen vijand
 if (spelerX - vijandX <50 &&
     spelerX - vijandX > -50 &&
-   spelerY === vijandY <50 &&
-   spelerY - vijandY > -50)
+   spelerY - vijandY <50 &&
+   spelerY - vijandY > -50) {
   console.log ("botsing");
   spelstatus = GAMEOVER
+}
   // botsing kogel tegen vijand
 
   // update punten en health
@@ -80,13 +82,16 @@ fill("blue");
 rect(0,0,1280,720);
   // vijand
 fill("red");
-rect(vijandX,vijandY,50,50);
+rect(vijandX-25,vijandY-25,50,50);
+    fill("black");
+  ellipse(vijandX, vijandY, 10, 10);
   // kogel
 
   // speler
   fill("green");
   ellipse(spelerX, spelerY, 50, 50);
-
+  fill("black");
+  ellipse(spelerX, spelerY, 10, 10);
   // punten en health
 
 };
