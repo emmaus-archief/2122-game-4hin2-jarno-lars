@@ -6,7 +6,7 @@ Gemaakt door:
 - *Jarno van Daalen*
 
 ### Beschrijving
-*2D parkour game. je kunt lopen, springen en je moet iets pakken voor je naar de finish kan. het doel is om uit een grot te komen en niet dood te gaan. *
+*doolhof met een eindpunt en vallen + vijanden onderweg naar eindpunt. bovenaanzicht. *
 
 ## Mijn planning
 Werk de planning af van boven naar beneden<br>

@@ -14,6 +14,10 @@ yoyoyo
 const SPELEN = 1;
 const GAMEOVER = 2;
 var spelStatus = SPELEN;
+const LEY_LEFT = 37
+const KEY_RIGHT = 39
+const KEY_UP = 38
+const KEY_DOWN = 40
 
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
@@ -31,11 +35,17 @@ var vijandY = 600;
  */
 var beweegAlles = function () {
   // speler
-  if (keyIsDown(37)) {
+  if (keyIsDown(LEFT_ARROW)) {
 spelerX = spelerX -1
   }
-  if (keyIsDown(39)) {
+  if (keyIsDown(RIGHT_ARROW)) {
 spelerX = spelerX +1
+  }
+  if (keyIsDown(DOWN_ARROW)) {
+spelerY = spelerY +1
+  }
+  if (keyIsDown(UP_ARROW)) {
+spelerY = spelerY -1
   }
   // vijand
 
@@ -50,9 +60,9 @@ spelerX = spelerX +1
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
 if (spelerX - vijandX <50 &&
-    spelerX - vijandX <-50 &&
+    spelerX - vijandX > -50 &&
    spelerY === vijandY <50 &&
-   spelerY - vijandY >-50)
+   spelerY - vijandY > -50)
   console.log ("botsing");
   spelstatus = GAMEOVER
   // botsing kogel tegen vijand
