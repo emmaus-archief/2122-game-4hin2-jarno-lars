@@ -34,7 +34,7 @@ var beweegAlles = function () {
   if (keyIsDown(37)) {
 spelerX = spelerX -1
   }
-  f (keyIsDown(39)) {
+  if (keyIsDown(39)) {
 spelerX = spelerX +1
   }
   // vijand
