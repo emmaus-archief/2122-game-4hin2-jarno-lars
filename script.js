@@ -19,11 +19,11 @@ const KEY_RIGHT = 39
 const KEY_UP = 38
 const KEY_DOWN = 40
 
-var spelerX = 600; // x-positie van speler
-var spelerY = 600; // y-positie van speler
+var speler1X = 600; // x-positie van speler
+var speler1Y = 600; // y-positie van speler
 
-var vijandX = 610;
-var vijandY = 640;
+var speler2X = 610;
+var speler2Y = 640;
 
 
 /* ********************************************* */
@@ -36,16 +36,16 @@ var vijandY = 640;
 var beweegAlles = function () {
   // speler
   if (keyIsDown(LEFT_ARROW)) {
-spelerX = spelerX -1
+speler1X = speler1X -1
   }
   if (keyIsDown(RIGHT_ARROW)) {
-spelerX = spelerX +1
+speler1X = speler1X +1
   }
   if (keyIsDown(DOWN_ARROW)) {
-spelerY = spelerY +1
+speler1Y = speler1Y +1
   }
   if (keyIsDown(UP_ARROW)) {
-spelerY = spelerY -1
+speler1Y = speler1Y -1
   }
   // vijand
 
@@ -59,10 +59,10 @@ spelerY = spelerY -1
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-if (spelerX - vijandX <50 &&
-    spelerX - vijandX > -50 &&
-   spelerY - vijandY <50 &&
-   spelerY - vijandY > -50) {
+if (speler1X - speler2X <50 &&
+    speler1X - speler2X > -50 &&
+   speler1Y - speler2Y <50 &&
+   speler1Y - speler2Y > -50) {
   console.log ("botsing");
   spelstatus = GAMEOVER
 }
