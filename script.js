@@ -19,6 +19,7 @@ const KEY_RIGHT = 39
 const KEY_UP = 38
 const KEY_DOWN = 40
 
+  
 var speler1X = 600; // x-positie van speler
 var speler1Y = 600; // y-positie van speler
 
@@ -48,10 +49,10 @@ speler1Y = speler1Y +1
 speler1Y = speler1Y -1
   }
   // vijand (speler2)
-  if (keyIsDown(KeyA)) {
+  if (keyIsDown(KeyA(65))) {
 speler2X = speler2X -1
   }
-  if (keyIsDown(RIGHT_ARROW)) {
+  if (keyIsDown(KeyD(68))) {
 speler2X = speler2X +1
   }
   if (keyIsDown(DOWN_ARROW)) {
