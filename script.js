@@ -49,16 +49,16 @@ speler1Y = speler1Y +1
 speler1Y = speler1Y -1
   }
   // vijand (speler2)
-  if (keyIsDown(KeyA(65))) {
+  if (keyIsDown(65)) {
 speler2X = speler2X -1
   }
-  if (keyIsDown(KeyD(68))) {
+  if (keyIsDown(68)) {
 speler2X = speler2X +1
   }
-  if (keyIsDown(DOWN_ARROW)) {
+  if (keyIsDown(83)) {
 speler2Y = speler2Y +1
   }
-  if (keyIsDown(UP_ARROW)) {
+  if (keyIsDown(87)) {
 speler2Y = speler2Y -1
   }
   // kogel
