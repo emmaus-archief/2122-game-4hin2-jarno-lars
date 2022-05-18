@@ -47,8 +47,19 @@ speler1Y = speler1Y +1
   if (keyIsDown(UP_ARROW)) {
 speler1Y = speler1Y -1
   }
-  // vijand
-
+  // vijand (speler2)
+  if (keyIsDown(KeyA)) {
+speler2X = speler2X -1
+  }
+  if (keyIsDown(RIGHT_ARROW)) {
+speler2X = speler2X +1
+  }
+  if (keyIsDown(DOWN_ARROW)) {
+speler2Y = speler2Y +1
+  }
+  if (keyIsDown(UP_ARROW)) {
+speler2Y = speler2Y -1
+  }
   // kogel
 };
 
@@ -81,16 +92,16 @@ fill("blue");
 rect(0,0,1280,720);
   // vijand
 fill("red");
-rect(vijandX-25,vijandY-25,50,50);
+rect(speler2X-25,speler2Y-25,50,50);
     fill("black");
-  ellipse(vijandX, vijandY, 10, 10);
+  ellipse(speler2X, speler2Y, 10, 10);
   // kogel
 
   // speler
   fill("green");
-  ellipse(spelerX, spelerY, 50, 50);
+  ellipse(speler1X, speler1Y, 50, 50);
   fill("black");
-  ellipse(spelerX, spelerY, 10, 10);
+  ellipse(speler1X, speler1Y, 10, 10);
   // punten en health
 
 };
