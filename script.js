@@ -20,11 +20,11 @@ const KEY_UP = 38
 const KEY_DOWN = 40
 
   
-var speler1X = 600; // x-positie van speler
-var speler1Y = 600; // y-positie van speler
+var speler1X = 100; // x-positie van speler
+var speler1Y = 100; // y-positie van speler
 
-var speler2X = 610;
-var speler2Y = 640;
+var speler2X = 1150;
+var speler2Y = 620;
 
 
 /* ********************************************* */
@@ -96,6 +96,13 @@ fill("red");
 rect(speler2X-25,speler2Y-25,50,50);
     fill("black");
   ellipse(speler2X, speler2Y, 10, 10);
+  // speelveld
+  // blok vovenin border
+  fill("pink");
+  rect(0,0,1400, 20);
+  // blok rechts border
+  fill("pink");
+  rect(0,0,1200, 20);
   // kogel
 
   // speler
