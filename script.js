@@ -37,29 +37,29 @@ var speler2Y = 640;
 var beweegAlles = function () {
   // speler
   if (keyIsDown(LEFT_ARROW)) {
-speler1X = speler1X -1
+speler1X = speler1X -1.2
   }
   if (keyIsDown(RIGHT_ARROW)) {
-speler1X = speler1X +1
+speler1X = speler1X +1.2
   }
   if (keyIsDown(DOWN_ARROW)) {
-speler1Y = speler1Y +1
+speler1Y = speler1Y +1.2
   }
   if (keyIsDown(UP_ARROW)) {
-speler1Y = speler1Y -1
+speler1Y = speler1Y -1.2
   }
   // vijand (speler2)
   if (keyIsDown(65)) {
-speler2X = speler2X -1
+speler2X = speler2X -1.5
   }
   if (keyIsDown(68)) {
-speler2X = speler2X +1
+speler2X = speler2X +1.5
   }
   if (keyIsDown(83)) {
-speler2Y = speler2Y +1
+speler2Y = speler2Y +1.5
   }
   if (keyIsDown(87)) {
-speler2Y = speler2Y -1
+speler2Y = speler2Y -1.5
   }
   // kogel
 };
