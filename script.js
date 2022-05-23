@@ -14,7 +14,7 @@ yoyoyo
 const SPELEN = 1;
 const GAMEOVER = 2;
 const UITLEG = 3;
-var spelStatus = SPELEN;
+var spelStatus = UITLEG;
 const LEY_LEFT = 37
 const KEY_RIGHT = 39
 const KEY_UP = 38
@@ -165,12 +165,26 @@ function draw() {
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
 console.log("game over");
-    textSize(20);
+    textSize(70);
     fill("white");
-    text("game over", 100, 100)
+    text("game over", 470, 400)
+    textSize(50)
+    text("Too bad :]", 520, 450)
+    if ( keyIsDown(32)) { // spatie
+      spelStatus = UITLEG;
+    }
   }
   if (spelStatus === UITLEG) {
     // teken uitleg scherm
 console.log("uitleg");
+  textSize(80);
+  fill("green");
+  rect(0,0,1280,720);
+  fill("white");
+  text("Start game", 100, 100);
+    if (keyIsDown(13)) {
+      Speler1X = 100;
+      Speler2X = 1150;
+    }
   }
 }
