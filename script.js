@@ -77,7 +77,7 @@ if (speler1X - speler2X <50 &&
    speler1Y - speler2Y <50 &&
    speler1Y - speler2Y > -50) {
   console.log ("botsing");
-  spelstatus = GAMEOVER
+  spelstatus = GAMEOVER;
 }
   // botsing kogel tegen vijand
 
@@ -182,7 +182,7 @@ console.log("uitleg");
   rect(0,0,1280,720);
   fill("white");
   text("Start game", 100, 100);
-    if (keyIsDown(13)) {
+    if (keyIsDown(13)) { // enter
       Speler1X = 100;
       Speler2X = 1150;
     }
