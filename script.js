@@ -19,7 +19,6 @@ const LEY_LEFT = 37
 const KEY_RIGHT = 39
 const KEY_UP = 38
 const KEY_DOWN = 40
-
   
 var speler1X = 100; // x-positie van speler
 var speler1Y = 100; // y-positie van speler
@@ -100,11 +99,29 @@ rect(speler2X-25,speler2Y-25,50,50);
   // speelveld
   // blok vovenin border
   fill("pink");
-  rect(0,0,1400, 20);
+  rect(0,0,1400,20);
+  // blok onder border
+  fill("pink");
+  rect(0,700,1400, 20);
+  // blok links border
+  fill("pink");
+  rect(0,0,20,1000);
   // blok rechts border
   fill("pink");
-  rect(0,0,1200, 20);
-  // kogel
+  rect(1260,0,20,1000);
+  // binnenin speelveld
+  fill("pink");
+  rect(100,150,20,150);
+  fill("pink");
+  rect(100,450,20,150);
+  fill("pink");
+  rect(100,210,150,20);
+  fill("pink");
+  rect(100,515,150,20);
+  fill("pink");
+  rect(640,450,20,150);
+  fill("pink");
+  rect(640,450,20,150);
 
   // speler
   fill("green");
