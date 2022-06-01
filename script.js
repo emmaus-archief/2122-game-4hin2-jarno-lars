@@ -185,6 +185,7 @@ console.log("uitleg");
     if (keyIsDown(13)) { // enter
       Speler1X = 100;
       Speler2X = 1150;
+      spelStatus = SPELEN;
     }
   }
 }
