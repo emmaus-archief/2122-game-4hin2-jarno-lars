@@ -178,10 +178,12 @@ console.log("game over");
     // teken uitleg scherm
 console.log("uitleg");
   textSize(80);
-  fill("green");
+  fill("gray");
   rect(0,0,1280,720);
   fill("white");
-  text("Start game", 100, 100);
+  text("Start game", 430, 400);
+    textSize(30)
+  text("Press enter to start :]", 495 , 445)
     if (keyIsDown(13)) { // enter
       Speler1X = 100;
       Speler2X = 1150;
