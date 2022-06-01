@@ -6,7 +6,7 @@ yoyoyo
    Begin met dit template voor je game opdracht,
    voeg er je eigen code aan toe.
  */
-
+poep
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
