@@ -19,6 +19,7 @@ const LEY_LEFT = 37
 const KEY_RIGHT = 39
 const KEY_UP = 38
 const KEY_DOWN = 40
+
   
 var speler1X = 100; // x-positie van speler
 var speler1Y = 100; // y-positie van speler
