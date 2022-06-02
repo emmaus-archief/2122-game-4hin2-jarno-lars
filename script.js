@@ -6,7 +6,7 @@ yoyoyo
    Begin met dit template voor je game opdracht,
    voeg er je eigen code aan toe.
  */
-poep
+
 /* ********************************************* */
 /* globale variabelen die je gebruikt in je game */
 /* ********************************************* */
@@ -186,6 +186,7 @@ console.log("game over");
     fill("white");
     text("game over", 470, 400)
     textSize(50)
+    
     text("Too bad :]", 520, 450)
     if ( keyIsDown(32)) { // spatie
       spelStatus = UITLEG;
@@ -202,8 +203,10 @@ console.log("uitleg");
     textSize(30)
   text("Press enter to start :]", 495 , 445)
     if (keyIsDown(13)) { // enter
-      Speler1X = 100;
-      Speler2X = 1150;
+    speler1X = 100; // x-positie van speler
+    speler1Y = 100; // y-positie van speler
+    speler2X = 1150;// x-positie van vijand
+    speler2Y = 620; // y-positie van vijand
       spelStatus = SPELEN;
     }
   }
