@@ -19,7 +19,7 @@ const LEY_LEFT = 37
 const KEY_RIGHT = 39
 const KEY_UP = 38
 const KEY_DOWN = 40
-
+const x = 150
   
 var speler1X = 100; // x-positie van speler
 var speler1Y = 100; // y-positie van speler
@@ -69,7 +69,7 @@ speler2Y = speler2Y -1.8
  * Checkt botsingen
  * Verwijdert neergeschoten dingen
  * Updatet globale variabelen punten en health
- */
+*/
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
 if (speler1X - speler2X <50 &&
@@ -111,12 +111,15 @@ rect(speler2X-25,speler2Y-25,50,50);
   fill("pink");
   rect(1260,0,20,1000);
   // binnenin speelveld
+ while(){
+    
+  }
   fill("pink");
-  rect(100,150,20,150);
+  rect(100,x ,20,150);
   fill("pink");
-  rect(100,450,20,150);
+  rect(100,x+300,20,150);
   fill("pink");
-  rect(100,210,150,20);
+  rect(100,x+60,150,20);
   fill("pink");
   rect(100,515,150,20);
   fill("pink");
