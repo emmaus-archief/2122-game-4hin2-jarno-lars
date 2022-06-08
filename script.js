@@ -19,15 +19,15 @@ const LEY_LEFT = 37
 const KEY_RIGHT = 39
 const KEY_UP = 38
 const KEY_DOWN = 40
-const x = 150
+var x = 100
   
 var speler1X = 100; // x-positie van speler
 var speler1Y = 100; // y-positie van speler
 
 var speler2X = 1150;
 var speler2Y = 620;
-
-
+ var plankX = [100, 200, 300, 100, 200, 300, 100, 200, 300];
+ var plankY = [100, 100, 100, 200, 200, 200, 300, 300, 300];
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -111,22 +111,13 @@ rect(speler2X-25,speler2Y-25,50,50);
   fill("pink");
   rect(1260,0,20,1000);
   // binnenin speelveld
- while(){
-    
-  }
-  fill("pink");
-  rect(100,x ,20,150);
-  fill("pink");
-  rect(100,x+300,20,150);
-  fill("pink");
-  rect(100,x+60,150,20);
-  fill("pink");
-  rect(100,515,150,20);
-  fill("pink");
-  rect(640,450,20,150);
-  fill("pink");
-  rect(640,450,20,150);
 
+  var i =0;
+  while(i <plankX.length){
+    rect(plankX[i],plankY[i] ,20,150);
+    i=i+1;
+ }
+  
   // speler
   fill("green");
   ellipse(speler1X, speler1Y, 50, 50);
