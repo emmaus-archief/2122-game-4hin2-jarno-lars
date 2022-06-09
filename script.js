@@ -26,8 +26,10 @@ var speler1Y = 100; // y-positie van speler
 
 var speler2X = 1150;
 var speler2Y = 620;
- var plankX = [100, 200, 300, 100, 200, 300, 100, 200, 300];
+ var plankX = [100, 400, 600, 100, 200, 300, 100, 200, 300];
  var plankY = [100, 100, 100, 200, 200, 200, 300, 300, 300];
+
+var timer = 5; // 5 sec
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -114,7 +116,7 @@ rect(speler2X-25,speler2Y-25,50,50);
 
   var i =0;
   while(i <plankX.length){
-    rect(plankX[i],plankY[i] ,20,150);
+    rect(plankX[i],plankY[i] ,20,100);
     i=i+1;
  }
   
@@ -123,7 +125,10 @@ rect(speler2X-25,speler2Y-25,50,50);
   ellipse(speler1X, speler1Y, 50, 50);
   fill("black");
   ellipse(speler1X, speler1Y, 10, 10);
-  // punten en health
+  // timer
+  fill("red");
+  textSize(30);
+  text(timer, 1000, 100);
 
 };
 
@@ -199,7 +204,7 @@ console.log("uitleg");
   text("Press enter to start :]", 495 , 445)
     if (keyIsDown(13)) { // enter
     speler1X = 100; // x-positie van speler
-    speler1Y = 100; // y-positie van speler
+    speler1Y = 50; // y-positie van speler
     speler2X = 1150;// x-positie van vijand
     speler2Y = 620; // y-positie van vijand
       spelStatus = SPELEN;
