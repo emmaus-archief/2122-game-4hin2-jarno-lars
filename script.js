@@ -65,6 +65,7 @@ speler2Y = speler2Y +1.8
 speler2Y = speler2Y -1.8
   }
   // kogel
+  timer = timer - 0.02;
 };
 
 /**
