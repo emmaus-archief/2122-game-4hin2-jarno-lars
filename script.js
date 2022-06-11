@@ -41,29 +41,29 @@ var timer = 5; // 5 sec
 var beweegAlles = function () {
   // speler
   if (keyIsDown(LEFT_ARROW)) {
-speler1X = speler1X -1.6
+speler1X = speler1X -1.8
   }
   if (keyIsDown(RIGHT_ARROW)) {
-speler1X = speler1X +1.6
+speler1X = speler1X +1.8
   }
   if (keyIsDown(DOWN_ARROW)) {
-speler1Y = speler1Y +1.6
+speler1Y = speler1Y +1.8
   }
   if (keyIsDown(UP_ARROW)) {
-speler1Y = speler1Y -1.6
+speler1Y = speler1Y -1.8
   }
   // vijand (speler2)
   if (keyIsDown(65)) {
-speler2X = speler2X -1.8
+speler2X = speler2X -2
   }
   if (keyIsDown(68)) {
-speler2X = speler2X +1.8
+speler2X = speler2X +2
   }
   if (keyIsDown(83)) {
-speler2Y = speler2Y +1.8
+speler2Y = speler2Y +2
   }
   if (keyIsDown(87)) {
-speler2Y = speler2Y -1.8
+speler2Y = speler2Y -2
   }
   // timer
   timer = timer - 0.02;
@@ -95,7 +95,8 @@ if (speler1X - speler2X <50 &&
 var tekenAlles = function () {
   
   // achtergrond
-fill("blue");
+fill('green')
+image(img3, 1280, 780);
 rect(0,0,1280,720);
   
   // vijand
@@ -122,14 +123,10 @@ rect(0,0,1280,720);
     i=i+1;
  }
   
-  // speler 1
-  image(img1, speler1X-25, speler1Y-25, 50, 50);
-  // speler 2
-fill("red");
-rect(speler2X-25,speler2Y-25,50,50);
-    fill("black");
-  ellipse(speler2X, speler2Y, 10, 10);
-  image(img2, speler2X-25, speler2Y-25, 50, 50);
+// speler 1
+image(img1, speler1X-25, speler1Y-25, 60,60);
+// speler 2
+image(img2, speler2X-25, speler2Y-25, 80, 80);
 
   
   // timer
@@ -164,12 +161,12 @@ var checkGameOver = function () {
  * we laden hier de plaatjes
  */
 function preload() {
-  img1 = loadImage('fireball.png');
+  img1 = loadImage('image2.png');
+  img2 = loadImage('enemy.png');
+  img3 = loadImage('grass.png');
 }
 
-function preload() {
-  img2 = loadImage('fireball.png');
-}
+
 /**
  * setup
  * de code in deze functie wordt één keer uitgevoerd door
@@ -180,7 +177,7 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('blue');
+  background("green");
 }
 
 /**
