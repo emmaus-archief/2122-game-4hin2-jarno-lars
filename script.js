@@ -1,5 +1,4 @@
 /* Game opdracht
-yoyoyo
    Informatica - Emmauscollege Rotterdam
    Template voor een game in JavaScript met de p5 library
 
@@ -20,14 +19,16 @@ const KEY_RIGHT = 39
 const KEY_UP = 38
 const KEY_DOWN = 40
 var x = 100
+var img1; 
+var img2; 
   
 var speler1X = 100; // x-positie van speler
 var speler1Y = 100; // y-positie van speler
 
 var speler2X = 1150;
 var speler2Y = 620;
- var plankX = [100, 400, 600, 100, 200, 300, 100, 200, 300];
- var plankY = [100, 100, 100, 200, 200, 200, 300, 300, 300];
+var plankX = [100, 400, 600, 100, 200, 300, 100, 200, 300];
+var plankY = [100, 100, 100, 200, 200, 200, 300, 300, 300];
 
 var timer = 5; // 5 sec
 /* ********************************************* */
@@ -64,7 +65,7 @@ speler2Y = speler2Y +1.8
   if (keyIsDown(87)) {
 speler2Y = speler2Y -1.8
   }
-  // kogel
+  // timer
   timer = timer - 0.02;
 };
 
@@ -92,14 +93,14 @@ if (speler1X - speler2X <50 &&
  * Tekent spelscherm
  */
 var tekenAlles = function () {
+  
   // achtergrond
 fill("blue");
 rect(0,0,1280,720);
+  
   // vijand
-fill("red");
-rect(speler2X-25,speler2Y-25,50,50);
-    fill("black");
-  ellipse(speler2X, speler2Y, 10, 10);
+
+  
   // speelveld
   // blok vovenin border
   fill("pink");
@@ -121,11 +122,16 @@ rect(speler2X-25,speler2Y-25,50,50);
     i=i+1;
  }
   
-  // speler
-  fill("green");
-  ellipse(speler1X, speler1Y, 50, 50);
-  fill("black");
-  ellipse(speler1X, speler1Y, 10, 10);
+  // speler 1
+  image(img1, speler1X-25, speler1Y-25, 50, 50);
+  // speler 2
+fill("red");
+rect(speler2X-25,speler2Y-25,50,50);
+    fill("black");
+  ellipse(speler2X, speler2Y, 10, 10);
+  image(img2, speler2X-25, speler2Y-25, 50, 50);
+
+  
   // timer
   fill("red");
   textSize(30);
@@ -152,7 +158,18 @@ var checkGameOver = function () {
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
+/**
+ * proload
+ * deze functie wordt 1x uitgevoerd voor setup.
+ * we laden hier de plaatjes
+ */
+function preload() {
+  img1 = loadImage('fireball.png');
+}
 
+function preload() {
+  img2 = loadImage('fireball.png');
+}
 /**
  * setup
  * de code in deze functie wordt één keer uitgevoerd door
@@ -187,7 +204,6 @@ console.log("game over");
     fill("white");
     text("game over", 470, 400)
     textSize(50)
-    
     text("Too bad :]", 520, 450)
     if ( keyIsDown(32)) { // spatie
       spelStatus = UITLEG;
