@@ -1,4 +1,4 @@
-Deze game is gebaseerd op het template voor 4HV van het Emmauscollege Rotterdam
+pDeze game is gebaseerd op het template voor 4HV van het Emmauscollege Rotterdam
 
 ## Mijn spel: *naam van het spel*
 Gemaakt door:
@@ -6,7 +6,7 @@ Gemaakt door:
 - *Jarno van Daalen*
 
 ### Beschrijving
-*doolhof met een eindpunt en vallen + vijanden onderweg naar eindpunt. bovenaanzicht. *
+* 2d 2 player game waarbij speler 1 moet overleven en niet gepakt moet worden door speler 2. *
 
 ## Mijn planning
 Werk de planning af van boven naar beneden<br>
@@ -27,9 +27,9 @@ Basis: uitleg, spelen, afgaan en punten
 - [x] x. beweeg de tegenspeler of je bal
 - [ ] x. zet punten op het scherm 
 - [ ] x. zorg dat je punten kunt scoren
-- [ ] x. zorg dat je af kunt
-- [ ] x. maak game-over-scherm
-- [ ] x. maak uitlegscherm
+- [x] x. zorg dat je af kunt
+- [x] x. maak game-over-scherm
+- [x] x. maak uitlegscherm
 
 ### Uitbreidingen 1
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
@@ -45,13 +45,13 @@ Uitbreiding: *bedenk iets, bijvoorbeeld bewegende achtergrond*
 
 ### Ideeen voor uitbreidingen
 Kies de uitbreidingen die je leuk vindt en maak je game nog mooier
-- [ ] Gebruik plaatjes voor de vijanden
-- [ ] Animeer speler
+- [x] Gebruik plaatjes voor de vijanden
+- [x] Animeer speler
 - [ ] Laat badges vallen die extra's aan speler geven
 - [ ] Maak spel steeds moeilijker door toenemend aantal vijanden met tekenVijand
-- [ ] Maak andere vijanden bij toenemen tekenVijand
-- [ ] Laat vijanden bewegen in patronen
-- [ ] Maak bediening met touch of bewegen van telefoon mogelijk (zorg dat toetsenbordbediening ook blijft werken)
+- [x] Maak andere vijanden bij toenemen tekenVijand
+- [x] Laat vijanden bewegen in patronen
+- [x] Maak bediening met touch of bewegen van telefoon mogelijk (zorg dat toetsenbordbediening ook blijft werken)
 - [ ] ...
 
 ## Documentatie

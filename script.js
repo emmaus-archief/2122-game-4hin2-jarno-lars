@@ -13,12 +13,14 @@
 const SPELEN = 1;
 const GAMEOVER = 2;
 const UITLEG = 3;
+const GAMEWON = 4;
 var spelStatus = UITLEG;
 const LEY_LEFT = 37
 const KEY_RIGHT = 39
 const KEY_UP = 38
 const KEY_DOWN = 40
 var x = 100
+var move = 5;
 
 var img1; 
 var img2; 
@@ -32,10 +34,11 @@ var speler1Y = 100; // y-positie van speler
 
 var speler2X = 1150;
 var speler2Y = 620;
+
 var plankX = [100, 600, 1100, 100, 600, 1100, 100, 600, 1100];
 var plankY = [100, 100, 100, 300, 300, 300, 500, 500, 500];
 
-var timer = 120; // 120 sec
+var timer = 5; // 120 sec
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -100,14 +103,39 @@ if (speler1X - speler2X <50 &&
 var tekenAlles = function () {
   
   // achtergrond
- fill('green')
- image(img3, 1280, 780);
- rect(0,0,1280,720);
+createCanvas(1280, 720);
+background(img3);
+
   
   // vijand
 
   
   // speelveld
+  if(speler1X < 0) {
+    speler1X = speler1X + move;
+  }
+  if(speler1X > width) {
+    speler1X = speler1X - move;
+  }
+  if(speler1Y < 0) {
+    speler1Y = speler1Y + move;
+  }
+  if(speler1Y > height) {
+    speler1Y = speler1Y - move;
+  }
+  if(speler2X < 0) {
+    speler2X = speler2X + move;
+  }
+  if(speler2X > width) {
+    speler2X = speler2X - move;
+  }
+  if(speler2Y < 0) {
+    speler2Y = speler2Y + move;
+  }
+  if(speler2Y > height) {
+    speler2Y = speler2Y - move;
+  }
+  
   // blok vovenin border
   fill("pink");
   rect(0,0,1400,20);
@@ -127,20 +155,19 @@ var tekenAlles = function () {
   rect(plankX[i],plankY[i] ,20,100);
   i=i+1;
  }
+    var i =0;
+  while(i <plankY.length){
+  rect(plankY[i],plankX[i] ,100,20);
+  i=i+1;
+ }
   
 // speler 1
  image(img1, speler1X-25, speler1Y-25, 60,60);
 // speler 2
  image(img2, speler2X-25, speler2Y-25, 80, 80);
 
-  
-  // timer
-  fill("black");
-  textSize(30);
-  text(timer, 1000, 100);
 
 };
-
 /**
  * return true als het gameover is
  * anders return false
@@ -182,8 +209,7 @@ function preload() {
  */
 function setup() {
   // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
- createCanvas(1280, 720);
-
+createCanvas(1280, 720);
   // Kleur de achtergrond blauw, zodat je het kunt zien
  background("green");
 }
@@ -205,13 +231,14 @@ function draw() {
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
 console.log("game over");
+  textFont('Georgia');
   textSize(70);
   fill("white");
-  text("game over", 470, 400)
+  text("game over", 470, 300)
   textSize(50)
-  text("Too bad :]", 520, 450)
+  text("Too bad :]", 520, 350)
   textSize(25)
-  text("press space to restart game", 480, 480)
+  text("press space to restart game", 480, 380)
   if ( keyIsDown(32)) { // spatie
   spelStatus = UITLEG;
   }
@@ -224,6 +251,7 @@ console.log("uitleg");
   rect(0,0,1280,720);
   fill("white");
   image(img6, 0, 0,1280, 720);
+  textFont('Georgia');
   text("Start game", 430, 200);
   textSize(30)
   text("Press enter to start :]", 495 , 245)
