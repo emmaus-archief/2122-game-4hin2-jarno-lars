@@ -149,23 +149,25 @@ background(img3);
   fill("pink");
   rect(1260,0,20,1000);
   // binnenin speelveld
-
+  
   var i =0;
   while(i <plankX.length){
   rect(plankX[i],plankY[i] ,20,100);
   i=i+1;
  }
+  
     var i =0;
   while(i <plankY.length){
   rect(plankY[i],plankX[i] ,100,20);
   i=i+1;
  }
   
-// speler 1
- image(img1, speler1X-25, speler1Y-25, 60,60);
 // speler 2
  image(img2, speler2X-25, speler2Y-25, 80, 80);
-
+    fill ('gray')
+  ellipse (400,100,100,100)
+// speler 1
+image(img1, speler1X-25, speler1Y-25, 60,60);
 
 };
 /**
