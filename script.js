@@ -14,11 +14,13 @@ const SPELEN = 1;
 const GAMEOVER = 2;
 const UITLEG = 3;
 const GAMEWON = 4;
-var spelStatus = UITLEG;
 const LEY_LEFT = 37
 const KEY_RIGHT = 39
 const KEY_UP = 38
 const KEY_DOWN = 40
+
+var spelStatus = UITLEG;
+
 var x = 100
 var move = 5;
 
@@ -28,6 +30,8 @@ var img3;
 var img4;
 var img5;
 var img6;
+var img7;
+var img8;
   
 var speler1X = 100; // x-positie van speler
 var speler1Y = 100; // y-positie van speler
@@ -35,52 +39,46 @@ var speler1Y = 100; // y-positie van speler
 var speler2X = 1150;
 var speler2Y = 620;
 
-var plankX = [100, 600, 1100, 100, 600, 1100, 100, 600, 1100];
-var plankY = [100, 100, 100, 300, 300, 300, 500, 500, 500];
-
-var timer = 5; // 120 sec
+var plankX = [100, 600, 100, 600, 100, 600];
+var plankY = [100, 100,  300, 300,  500, 500,];
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
 
 /**
- * Updatet globale variabelen met posities van speler, vijanden en kogels
+ * snelheid ghostrider (speler1)
  */
 var beweegAlles = function () {
   // speler
   if (keyIsDown(LEFT_ARROW)) {
-speler1X = speler1X -1.8
+speler1X = speler1X -2.3
   }
   if (keyIsDown(RIGHT_ARROW)) {
-speler1X = speler1X +1.8
+speler1X = speler1X +2.3
   }
   if (keyIsDown(DOWN_ARROW)) {
-speler1Y = speler1Y +1.8
+speler1Y = speler1Y +2.3
   }
   if (keyIsDown(UP_ARROW)) {
-speler1Y = speler1Y -1.8
+speler1Y = speler1Y -2.3
   }
-  // vijand (speler2)
+  // snelheid pacman (speler2)
   if (keyIsDown(65)) {
-speler2X = speler2X -2
+speler2X = speler2X -2.5
   }
   if (keyIsDown(68)) {
-speler2X = speler2X +2
+speler2X = speler2X +2.5
   }
   if (keyIsDown(83)) {
-speler2Y = speler2Y +2
+speler2Y = speler2Y +2.5
   }
   if (keyIsDown(87)) {
-speler2Y = speler2Y -2
+speler2Y = speler2Y -2.5
   }
-  // timer
-  timer = timer - 0.03;
 };
 
 /**
  * Checkt botsingen
- * Verwijdert neergeschoten dingen
- * Updatet globale variabelen punten en health
 */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
@@ -91,10 +89,6 @@ if (speler1X - speler2X <50 &&
  console.log ("botsing");
  spelstatus = GAMEOVER;
 }
-  // botsing kogel tegen vijand
-
-  // update punten en health
-
 };
 
 /**
@@ -110,7 +104,7 @@ background(img3);
   // vijand
 
   
-  // speelveld
+  // speelveld (invisible muren rondom)
   if(speler1X < 0) {
     speler1X = speler1X + move;
   }
@@ -136,20 +130,18 @@ background(img3);
     speler2Y = speler2Y - move;
   }
   
-  // blok vovenin border
-  fill("pink");
+  // blok bovenin border
+  fill("black");
   rect(0,0,1400,20);
   // blok onder border
-  fill("pink");
   rect(0,700,1400, 20);
   // blok links border
-  fill("pink");
   rect(0,0,20,1000);
   // blok rechts border
-  fill("pink");
   rect(1260,0,20,1000);
   // binnenin speelveld
-  
+
+  // zwarte lijnen
   var i =0;
   while(i <plankX.length){
   rect(plankX[i],plankY[i] ,20,100);
@@ -162,12 +154,13 @@ background(img3);
   i=i+1;
  }
   
-// speler 2
- image(img2, speler2X-25, speler2Y-25, 80, 80);
-    fill ('gray')
-  ellipse (400,100,100,100)
-// speler 1
-image(img1, speler1X-25, speler1Y-25, 60,60);
+// speler 2// speler
+ image(img1, speler2X-25, speler2Y-25, 60, 60);
+ // mushroom
+  image(img7, 180, 180, 350, 350);
+  image(img8, 750, 180, 350, 350);
+// speler 1// vijand
+image(img2, speler1X-25, speler1Y-25, 80,80);
 
 };
 /**
@@ -201,8 +194,9 @@ function preload() {
  img4 = loadImage('plaatjes/controls.png')
  img5 = loadImage('plaatjes/controls3.png')
  img6 = loadImage('plaatjes/startgame.jpeg')
+ img7 = loadImage('plaatjes/mushroom.png')
+ img8 = loadImage('plaatjes/mushroom2.png')
 }
-
 
 /**
  * setup
@@ -213,7 +207,6 @@ function setup() {
   // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
 createCanvas(1280, 720);
   // Kleur de achtergrond blauw, zodat je het kunt zien
- background("green");
 }
 
 /**
@@ -230,6 +223,7 @@ function draw() {
   spelStatus = GAMEOVER;
     }
   }
+  
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
 console.log("game over");
@@ -240,11 +234,12 @@ console.log("game over");
   textSize(50)
   text("Too bad :]", 520, 350)
   textSize(25)
-  text("press space to restart game", 480, 380)
+  text("press space to restart game", 480, 675)
   if ( keyIsDown(32)) { // spatie
   spelStatus = UITLEG;
   }
   }
+  
   if (spelStatus === UITLEG) {
     // teken uitleg scherm
 console.log("uitleg");
@@ -254,15 +249,17 @@ console.log("uitleg");
   fill("white");
   image(img6, 0, 0,1280, 720);
   textFont('Georgia');
-  text("Start game", 430, 200);
+  text("RUN PACMAN RUN!", 255, 200);
   textSize(30)
   text("Press enter to start :]", 495 , 245)
   image(img4, 200, 400, 275, 180);
   image(img5, 800, 360, 275, 270);
   textSize(40)
   fill('black');
-  text('player 1', 865, 360)
-  text('player 2', 260, 360)
+  text('Ghostrider', 845, 360)
+  text('PACMAN', 255, 360)
+  textSize(20)
+  text('mushrooms zijn je vrienden ;)' , 210, 600)
   if (keyIsDown(13)) { // enter
   speler1X = 100; // x-positie van speler
   speler1Y = 50; // y-positie van speler
