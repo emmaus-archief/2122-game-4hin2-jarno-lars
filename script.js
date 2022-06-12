@@ -19,8 +19,13 @@ const KEY_RIGHT = 39
 const KEY_UP = 38
 const KEY_DOWN = 40
 var x = 100
+
 var img1; 
 var img2; 
+var img3;
+var img4;
+var img5;
+var img6;
   
 var speler1X = 100; // x-positie van speler
 var speler1Y = 100; // y-positie van speler
@@ -77,11 +82,11 @@ speler2Y = speler2Y -2
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
 if (speler1X - speler2X <50 &&
-    speler1X - speler2X > -50 &&
-   speler1Y - speler2Y <50 &&
-   speler1Y - speler2Y > -50) {
-  console.log ("botsing");
-  spelstatus = GAMEOVER;
+ speler1X - speler2X > -50 &&
+ speler1Y - speler2Y <50 &&
+ speler1Y - speler2Y > -50) {
+ console.log ("botsing");
+ spelstatus = GAMEOVER;
 }
   // botsing kogel tegen vijand
 
@@ -95,9 +100,9 @@ if (speler1X - speler2X <50 &&
 var tekenAlles = function () {
   
   // achtergrond
-fill('green')
-image(img3, 1280, 780);
-rect(0,0,1280,720);
+ fill('green')
+ image(img3, 1280, 780);
+ rect(0,0,1280,720);
   
   // vijand
 
@@ -119,14 +124,14 @@ rect(0,0,1280,720);
 
   var i =0;
   while(i <plankX.length){
-    rect(plankX[i],plankY[i] ,20,100);
-    i=i+1;
+  rect(plankX[i],plankY[i] ,20,100);
+  i=i+1;
  }
   
 // speler 1
-image(img1, speler1X-25, speler1Y-25, 60,60);
+ image(img1, speler1X-25, speler1Y-25, 60,60);
 // speler 2
-image(img2, speler2X-25, speler2Y-25, 80, 80);
+ image(img2, speler2X-25, speler2Y-25, 80, 80);
 
   
   // timer
@@ -142,9 +147,9 @@ image(img2, speler2X-25, speler2Y-25, 80, 80);
  */
 var checkGameOver = function () {
   if (speler1X - speler2X <50 &&
-    speler1X - speler2X > -50 &&
-   speler1Y - speler2Y <50 &&
-   speler1Y - speler2Y > -50) {
+  speler1X - speler2X > -50 &&
+  speler1Y - speler2Y <50 &&
+  speler1Y - speler2Y > -50) {
     
     return true;
   }
@@ -161,9 +166,12 @@ var checkGameOver = function () {
  * we laden hier de plaatjes
  */
 function preload() {
-  img1 = loadImage('image2.png');
-  img2 = loadImage('enemy.png');
-  img3 = loadImage('grass.png');
+ img1 = loadImage('image2.png');
+ img2 = loadImage('enemy.png');
+ img3 = loadImage('grass.png');
+ img4 = loadImage('controls.png')
+ img5 = loadImage('controls3.png')
+ img6 = loadImage('startgame.jpeg')
 }
 
 
@@ -174,10 +182,10 @@ function preload() {
  */
 function setup() {
   // Maak een canvas (rechthoek) waarin je je speelveld kunt tekenen
-  createCanvas(1280, 720);
+ createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background("green");
+ background("green");
 }
 
 /**
@@ -187,24 +195,26 @@ function setup() {
  */
 function draw() {
   if (spelStatus === SPELEN) {
-    beweegAlles();
-    verwerkBotsing();
-    tekenAlles();
-    if (checkGameOver()) {
-      spelStatus = GAMEOVER;
+  beweegAlles();
+  verwerkBotsing();
+  tekenAlles();
+  if (checkGameOver()) {
+  spelStatus = GAMEOVER;
     }
   }
   if (spelStatus === GAMEOVER) {
     // teken game-over scherm
 console.log("game over");
-    textSize(70);
-    fill("white");
-    text("game over", 470, 400)
-    textSize(50)
-    text("Too bad :]", 520, 450)
-    if ( keyIsDown(32)) { // spatie
-      spelStatus = UITLEG;
-    }
+  textSize(70);
+  fill("white");
+  text("game over", 470, 400)
+  textSize(50)
+  text("Too bad :]", 520, 450)
+  textSize(25)
+  text("press space to restart game", 480, 480)
+  if ( keyIsDown(32)) { // spatie
+  spelStatus = UITLEG;
+  }
   }
   if (spelStatus === UITLEG) {
     // teken uitleg scherm
@@ -213,15 +223,22 @@ console.log("uitleg");
   fill("gray");
   rect(0,0,1280,720);
   fill("white");
-  text("Start game", 430, 400);
-    textSize(30)
-  text("Press enter to start :]", 495 , 445)
-    if (keyIsDown(13)) { // enter
-    speler1X = 100; // x-positie van speler
-    speler1Y = 50; // y-positie van speler
-    speler2X = 1150;// x-positie van vijand
-    speler2Y = 620; // y-positie van vijand
-      spelStatus = SPELEN;
+  image(img6, 0, 0,1280, 720);
+  text("Start game", 430, 200);
+  textSize(30)
+  text("Press enter to start :]", 495 , 245)
+  image(img4, 200, 400, 275, 180);
+  image(img5, 800, 360, 275, 270);
+  textSize(40)
+  fill('black');
+  text('player 1', 865, 360)
+  text('player 2', 260, 360)
+  if (keyIsDown(13)) { // enter
+  speler1X = 100; // x-positie van speler
+  speler1Y = 50; // y-positie van speler
+  speler2X = 1150;// x-positie van vijand
+  speler2Y = 620; // y-positie van vijand
+  spelStatus = SPELEN;
     }
   }
 }
