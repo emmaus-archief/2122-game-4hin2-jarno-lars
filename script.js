@@ -3,7 +3,7 @@
    Template voor een game in JavaScript met de p5 library
 
    Begin met dit template voor je game opdracht,
-   voeg er je eigen code aan toe.
+   voeg er je eigen code aan toe.lllll
  */
 
 /* ********************************************* */
