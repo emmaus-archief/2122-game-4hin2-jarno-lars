@@ -32,10 +32,10 @@ var speler1Y = 100; // y-positie van speler
 
 var speler2X = 1150;
 var speler2Y = 620;
-var plankX = [100, 400, 600, 100, 200, 300, 100, 200, 300];
-var plankY = [100, 100, 100, 200, 200, 200, 300, 300, 300];
+var plankX = [100, 600, 1100, 100, 600, 1100, 100, 600, 1100];
+var plankY = [100, 100, 100, 300, 300, 300, 500, 500, 500];
 
-var timer = 5; // 5 sec
+var timer = 120; // 120 sec
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -71,7 +71,7 @@ speler2Y = speler2Y +2
 speler2Y = speler2Y -2
   }
   // timer
-  timer = timer - 0.02;
+  timer = timer - 0.03;
 };
 
 /**
@@ -135,7 +135,7 @@ var tekenAlles = function () {
 
   
   // timer
-  fill("red");
+  fill("black");
   textSize(30);
   text(timer, 1000, 100);
 
@@ -166,12 +166,12 @@ var checkGameOver = function () {
  * we laden hier de plaatjes
  */
 function preload() {
- img1 = loadImage('image2.png');
- img2 = loadImage('enemy.png');
- img3 = loadImage('grass.png');
- img4 = loadImage('controls.png')
- img5 = loadImage('controls3.png')
- img6 = loadImage('startgame.jpeg')
+ img1 = loadImage('plaatjes/image2.png');
+ img2 = loadImage('plaatjes/enemy.png');
+ img3 = loadImage('plaatjes/grass.png');
+ img4 = loadImage('plaatjes/controls.png')
+ img5 = loadImage('plaatjes/controls3.png')
+ img6 = loadImage('plaatjes/startgame.jpeg')
 }
 
 
